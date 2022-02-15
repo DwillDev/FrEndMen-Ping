@@ -1,11 +1,11 @@
 /* Imports */
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap');
 
 /* Main Containers */
 :root {
   font-size: 62.5%;
   --guide: 0.01rem solid;
-  font-family: "Libre Franklin", sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   --blue: hsl(223, 87%, 63%);
   --paleblue: hsl(223, 100%, 88%);
   --darkblue: hsl(209, 33%, 12%);
@@ -27,7 +27,7 @@ body {
 /* Sub-Containers I */
 #wrapper {
   text-align: center;
-  padding: 9rem 0 3rem 0;
+  padding: 5rem 0 3rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,11 +44,13 @@ main {
   align-items: center;
   gap: 2.5rem;
   margin-bottom: 13rem;
+  transition: margin 0.5s ease-in-out;
 }
 
 footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   row-gap: 3rem;
   flex-direction: column;
 }
@@ -64,7 +66,7 @@ h1 {
   font-size: clamp(2.5rem, 6vw, 4rem);
 }
 
-#email-label {
+#email-form {
   margin: auto;
 }
 
@@ -86,7 +88,7 @@ h1 {
   color: var(--darkblue);
 }
 
-#email-label span {
+#email-label {
   display: block;
   font-size: clamp(1.3rem, 3.5vw, 1.7rem);
   font-weight: 400;
@@ -94,11 +96,19 @@ h1 {
   margin-bottom: 4rem;
 }
 
-#email-form {
+.subscribe {
   display: flex;
   flex-direction: column;
-  width: clamp(28rem, 75vw, 54rem);
+  align-items: stretch;
   gap: 1.3rem;
+  width: clamp(28rem, 75vw, 54rem);
+}
+
+.messages {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: auto;
+  padding-top: 0.8rem;
 }
 
 #dashboard {
@@ -106,12 +116,14 @@ h1 {
   margin-top: 5rem;
 }
 
-#social-media svg {
-  fill: var(--blue);
-  width: 3rem;
+.iconify {
+  background-color: var(--blue);
+  color: white;
+  font-size: 3rem;
+  border-radius: 50%;
 }
 
-/* Sub-Containers V */
+/* Sub-Containers V and below */
 #email {
   border: 0.01rem solid var(--paleblue);
 }
@@ -120,64 +132,67 @@ button {
   background-color: var(--blue);
   color: white;
   border: none;
-  font-family: "Libre Franklin", sans-serif;
-  box-shadow: .4rem .6rem .7rem var(--paleblue);
+  font-family: 'Libre Franklin', sans-serif;
+  box-shadow: 0.4rem 0.6rem 0.7rem var(--paleblue);
 }
 
-#email,
-button {
+.subscribe > * {
   border-radius: 5rem;
   height: 4.5rem;
 }
 
-/* Pseudo-Elements */
+.error {
+  color: var(--lightred);
+}
+
+.submitted {
+  color: var(--blue);
+}
+
+/* Pseudo-Elements & Etc. */
 input::placeholder {
   color: var(--paleblue);
 }
 
-input[type="email"]{
-    font-family: "Libre Franklin", sans-serif;
-    padding-left: 2.5rem;
+input[type='email'] {
+  font-family: 'Libre Franklin', sans-serif;
+  padding-left: 2.5rem;
 }
 
-button:hover{
-    background-color:hsl(223, 100%, 75%);
-    cursor:pointer;
+button:hover {
+  background-color: hsl(223, 100%, 75%);
+  cursor: 'pointer', default;
+  transition: background-color 0.5s ease-in;
 }
 
-#social-media svg:hover{
-    background-color: var(--blue);
-    fill:white;
-    border-radius: 50%;
+.iconify:hover {
+  background-color: white;
+  color: var(--blue);
+  transition: 0.5s ease-in;
+}
 
+.hide {
+  display: none;
 }
 
 /* Media Queries */
-@media screen and (min-width: 620px) {
-  /* Main Containers */
-  :root {
-  }
-
-  body {
-  }
-
-  /* Sub-Containers I */
-  #wrapper {
-    padding: 7rem 0 0 0;
-  }
-
+@media screen and (min-width: 500px) {
   /* Sub-Containers  II */
   main {
-    margin-bottom: 6rem;
-    gap: 1.7rem;
-  }
-
-  /* Sub-Containers III */
-  #email-form {
-    flex-direction: row;
+    margin-bottom: 7.7rem;
   }
 
   /* Sub-Containers IV */
+  .subscribe {
+    flex-direction: row;
+  }
+
+  .messages {
+    text-align: left;
+    padding-left: 2rem;
+  }
+
+  /* Sub-Containers V and below */
   #email {
     width: 68%;
   }
@@ -185,8 +200,4 @@ button:hover{
   button {
     width: 32%;
   }
-
-  /* Sub-Containers V */
-
-  /* Pseudo-Elements */
 }
