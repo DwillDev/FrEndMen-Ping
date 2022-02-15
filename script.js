@@ -1,24 +1,27 @@
-//Logo Physics
-const { styler, spring, listen, pointer, value } = window.popmotion;
+const submit = document.querySelector('button');
+const subscribe = document.querySelector('#email');
+const error = document.querySelector('.error');
+const correct = document.querySelector('.submitted');
 
-const ball = document.querySelector('#logo');
-const divStyler = styler(ball);
-const ballXY = value({ x: 0, y: 0 }, divStyler.set);
+submit.addEventListener('click', function emailCheck() {
+  if (subscribe.checkValidity() && error.classList.contains('hide')) {
+    correct.classList.remove('hide');
+  } else if (!subscribe.checkValidity() && correct.classList.contains('hide')) {
+    error.classList.remove('hide');
+    subscribe.style.borderColor = 'hsl(354, 100%, 66%)';
+  } else {
+    changeBack();
+  }
+});
 
-listen(ball, 'mousedown touchstart')
-  .start((e) => {
-    e.preventDefault();
-    pointer(ballXY.get()).start(ballXY);
-  });
-
-listen(document, 'mouseup touchend')
-  .start(() => {
-    spring({
-      from: ballXY.get(),
-      velocity: ballXY.getVelocity(),
-      to: { x: 0, y: 0 },
-      stiffness: 200,
-      // mass: 1,
-      // damping: 10
-    }).start(ballXY);
-  });
+function changeBack() {
+  if (subscribe.checkValidity() && !error.classList.contains('hide')) {
+    error.classList.add('hide');
+    subscribe.style.borderColor = 'hsl(223, 87%, 63%)';
+    correct.classList.remove('hide');
+  } else {
+    correct.classList.add('hide');
+    subscribe.style.borderColor = 'hsl(354, 100%, 66%)';
+    error.classList.remove('hide');
+  }
+}
