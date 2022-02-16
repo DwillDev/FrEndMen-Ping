@@ -18,12 +18,22 @@
         <form id="email-form" onsubmit="return false">
           <label for="email" id="email-label">Subscribe and get notified</label>
           <div class="subscribe">
-            <input type="email" id="email" placeholder="Your email address..." required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email address..."
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              required
+            />
             <button>Notify Me</button>
           </div>
           <div class="messages">
-            <div class="error hide">
+            <div class="invalid error hide">
               <p>Please provide a valid email address</p>
+            </div>
+            <div class="empty error hide">
+              <p>Whoops! It looks like you forgot to add your email</p>
             </div>
             <div class="submitted hide">
               <p>You are now subscribed!</p>
@@ -40,9 +50,15 @@
       </main>
       <footer>
         <section id="social-media">
-          <span class="iconify" data-icon="entypo-social:facebook-with-circle"></span>
-          <span class="iconify" data-icon="entypo-social:twitter-with-circle"></span>
-          <span class="iconify" data-icon="entypo-social:instagram-with-circle"></span>
+          <a href="https://www.facebook.com" target="_blank"
+            ><span class="iconify" data-icon="entypo-social:facebook-with-circle"></span
+          ></a>
+          <a href="https://www.twitter.com" target="_blank"
+            ><span class="iconify" data-icon="entypo-social:twitter-with-circle"></span
+          ></a>
+          <a href="https://www.instagram.com" target="_blank"
+            ><span class="iconify" data-icon="entypo-social:instagram-with-circle"></span
+          ></a>
         </section>
         <section id="copyright">
           <p>&#169; Copyright Ping. All rights reserved.</p>
