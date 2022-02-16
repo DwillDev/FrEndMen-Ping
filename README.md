@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Code](https://github.com/NaiWilliams/FrEndMen-Ping)
-- Live Site URL: [GitHUb Pages](https://naiwilliams.github.io/FrEndMen-Ping/)
+- Live Site URL: [GitHub Pages](https://naiwilliams.github.io/FrEndMen-Ping/)
 
 ## My process
 
