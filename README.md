@@ -30,13 +30,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![web](https://user-images.githubusercontent.com/83989593/154333214-e78eedc8-bb6b-4863-a9d3-9b6cedd275a7.png)
+![mobile](https://user-images.githubusercontent.com/83989593/154333233-c54a8c2c-3b88-4e9f-9826-dffaf1e6076b.png)
+
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/NaiWilliams/FrEndMen-Ping)
-- Live Site URL: [Add live site URL here](https://naiwilliams.github.io/FrEndMen-Ping/)
+- Solution URL: [Github Code](https://github.com/NaiWilliams/FrEndMen-Ping)
+- Live Site URL: [GitHub Pages](https://naiwilliams.github.io/FrEndMen-Ping/)
 
 ## My process
 
